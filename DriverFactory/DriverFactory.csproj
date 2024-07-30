@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>DriverFactory</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Joshua Bowery</Authors>
+    <Description>Simple driver factory for selenium projects</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Selenium.Support" Version="4.23.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.23.0" />
+  </ItemGroup>
+
+</Project>
+
