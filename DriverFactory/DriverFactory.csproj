@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>DriverFactory</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Joshua Bowery</Authors>
     <Description>Simple driver factory for selenium projects</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
