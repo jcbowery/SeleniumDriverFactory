@@ -21,8 +21,8 @@ jobs:
       - name: Get current version
         id: get_version
         run: |
-          echo pwd
-          echo ls
+          pwd
+          ls
 
       - name: Restore dependencies
         run: dotnet restore
