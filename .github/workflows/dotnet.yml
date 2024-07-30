@@ -32,6 +32,11 @@ jobs:
           echo "New version: $NEW_VERSION"
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
 
+      - name: Update version in .csproj
+        run: |
+          # Update the version in the .csproj file
+          sed -i "s/<Version>.*<\/Version>/<Version>${{ env.NEW_VERSION }}<\/Version>/" DriverFactory.csproj
+
       - name: Restore dependencies
         run: dotnet restore
 
