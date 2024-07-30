@@ -57,3 +57,13 @@ jobs:
           pwd
           echo $NEW_VERSION
           sed -i "s/<Version>.*<\/Version>/<Version>${{ env.NEW_VERSION }}<\/Version>/" DriverFactory.csproj
+
+      - name: Commit new version
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: actions@github.com
+          message: "Increment NuGet package version to ${{ env.NEW_VERSION }}"
+          add: 'DriverFactory.csproj'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
