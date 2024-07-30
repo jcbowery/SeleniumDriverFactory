@@ -21,19 +21,8 @@ jobs:
       - name: Get current version
         id: get_version
         run: |
-          VERSION=$(grep -oPm1 "(?<=<Version>)[^<]+" DriverFactory.csproj)
-          echo "Current version: $VERSION"
-          # Increment the version (example: incrementing the patch version)
-          IFS='.' read -r -a version_parts <<< "$VERSION"
-          PATCH=$((version_parts[2]+1))
-          NEW_VERSION="${version_parts[0]}.${version_parts[1]}.${PATCH}"
-          echo "New version: $NEW_VERSION"
-          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
-
-      - name: Update version in .csproj
-        run: |
-          # Update the version in the .csproj file
-          sed -i "s/<Version>.*<\/Version>/<Version>${{ env.NEW_VERSION }}<\/Version>/" DriverFactory.csproj
+          echo pwd
+          echo ls
 
       - name: Restore dependencies
         run: dotnet restore
