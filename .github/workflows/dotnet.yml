@@ -35,6 +35,7 @@ jobs:
       - name: Update version in .csproj
         run: |
           # Update the version in the .csproj file
+          cd DriverFactory
           sed -i "s/<Version>.*<\/Version>/<Version>${{ env.NEW_VERSION }}<\/Version>/" DriverFactory.csproj
 
       - name: Restore dependencies
