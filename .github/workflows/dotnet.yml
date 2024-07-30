@@ -23,7 +23,7 @@ jobs:
         run: |
           # Read the version from the .csproj file
           cd DriverFactory
-          VERSION=$(grep -oPm1 "(?<=<Version>)[^<]+" MyProject.csproj)
+          VERSION=$(grep -oPm1 "(?<=<Version>)[^<]+" DriverFactory.csproj)
           echo "Current version: $VERSION"
           # Increment the version (example: incrementing the patch version)
           IFS='.' read -r -a version_parts <<< "$VERSION"
